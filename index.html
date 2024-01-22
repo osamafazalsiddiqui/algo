@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="os.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+  <script src="os.js"></script>
+  <div class="container">
+    <div>
+      <h1>CPU Scheduling Algorithms Calculator</h1>
+
+      <div>
+        <div class="columns">
+          <form id="algorithm" style="color: white">
+        <h4>Select an Algorithm<br> </h4>
+
+            <span><input type="radio" name="algorithm" value="fcfs" /> FCFS (First Come First Serve)<br /></span>
+
+           <span><input type="radio" name="algorithm" value="sjf" /> SJF (Shortest Job First)<br /></span>
+            <span><input type="radio" name="algorithm" value="priority" checked /> Priority Based scheduling<br /></span>
+            <span><input type="radio" name="algorithm" value="robin" /> Round Robin Scheduling</span>
+          </form>
+          
+
+          <div>
+            <table id="inputTable">
+              <tr>
+                <th>Process</th>
+                <th>Arrival Time</th>
+                <th>Burst/CPU Time</th>
+                <th class="servtime">Service Time</th>
+                <th class="priority-only">Priority</th>
+              </tr>
+              <tr>
+                <td>P0</td>
+                <td>0</td>
+                <td><input class="initial exectime" type="text" value="5" /></td>
+                <td class="servtime"></td>
+                <td class="priority-only initial"><input type="text" /></td>
+              </tr>
+              <tr>
+                <td>P1</td>
+                <td>1</td>
+                <td><input class="initial exectime" value="3" /></td>
+                <td class="servtime"></td>
+                <td class="priority-only"><input type="text" /></td>
+              </tr>
+            </table>
+            <div class="align">
+              <input id="minus"
+                style="background-color: white; color: #36a0a3; border: none;  padding: 2px 12px; font-size: 30px;"
+                type="button" value="-" onclick="deleteRow();" />
+
+              <input type="button"
+                style="background-color: white; color: #36a0a3; border: none;   padding: 2px 9px; font-size: 30px;"
+                value="+" onclick="addRow();" />
+                <p id="quantumParagraph" hidden>Quantum:
+                  <input style="width: 50px;" id="quantum" type="text" value="3" />
+                </p>
+              <input type="button" value="Calculate"
+                style="background-color: rgb(1, 60, 75); color: white; border: none; border-radius: 30px; padding: 15px 30px; font-size: 20px;  cursor: pointer; transition: background-color 0.3s;"
+                onclick="draw();" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+    </div>
+    
+    <!-- <input type="button" value="Calculate" style="background-color: white; color: #36a0a3; border: none; border-radius: 4px; padding: 10px 24px; font-size: 20px; position: absolute; left: 710px; top: 600px; margin-top: 50px;" onclick="draw();" /> -->
+
+    <p class="zaz">
+      <u> Total Completion Time: <strong id="timer"></strong> seconds </u>
+    </p>
+    <br /><br />
+
+    <fresh>
+    </fresh>
+    <!-- <p class="zaz">
+      <u> Total Completion Time: <strong id="timer"></strong> seconds </u>
+    </p> -->
+
+  </div>
